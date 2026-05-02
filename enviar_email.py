@@ -18,7 +18,7 @@ def enviar_email(destinatario=os.environ['EMAIL_PROVEDOR'], corpo_mensagem="<p>N
         msg.add_header('Content-Type', 'text/html')
         msg.set_payload(corpo_email)
 
-        s = smtplib.SMTP_SSL('smtp.gmail.com', 465, timeout=10)
+        smtplib.SMTP('smtp.gmail.com', 587)
         s.starttls()
 
         # Login Credentials for sending the mail
